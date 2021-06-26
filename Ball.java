@@ -1,11 +1,22 @@
 import java.awt.*;
 
+import jdk.tools.jlink.internal.DirArchive;
+
 /**
 	Esta classe representa a bola usada no jogo. A classe princial do jogo (Pong)
 	instancia um objeto deste tipo quando a execução é iniciada.
 */
 
 public class Ball {
+
+		public double cx;
+		public double cy;
+		public double width;
+		public double height;
+		public Color color;
+		public double speed;  
+		public String playerId;
+		public long delta;
 
 	/**
 		Construtor da classe Ball. Observe que quem invoca o construtor desta classe define a velocidade da bola 
@@ -21,7 +32,12 @@ public class Ball {
 	*/
 
 	public Ball(double cx, double cy, double width, double height, Color color, double speed){
-	
+		this.cx = cx;
+		this.cy = cy;
+		this.width = width;
+		this.height =  height;
+		this.color = color;
+		this.speed = speed;   
 	}
 
 
@@ -42,7 +58,7 @@ public class Ball {
 	*/
 
 	public void update(long delta){
-
+		this.delta = delta;
 	}
 
 	/**
@@ -52,6 +68,7 @@ public class Ball {
 	*/
 
 	public void onPlayerCollision(String playerId){
+		this.playerId = playerId;
 
 	}
 
@@ -71,7 +88,7 @@ public class Ball {
 		@param wall referência para uma instância de Wall contra a qual será verificada a ocorrência de colisão da bola.
 		@return um valor booleano que indica a ocorrência (true) ou não (false) de colisão.
 	*/
-	
+
 	public boolean checkCollision(Wall wall){
 
 		return false;

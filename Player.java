@@ -7,6 +7,16 @@ import java.awt.*;
 
 public class Player {
 
+
+		public double cx;
+		public double cy;
+		public double width;
+		public double height;
+		public Color color;
+		public String id;
+		public double [] v_limit;
+		public double speed;
+
 	/**
 		Construtor da classe Player.
 
@@ -21,7 +31,14 @@ public class Player {
 	*/
 
 	public Player(double cx, double cy, double width, double height, Color color, String id, double [] v_limit, double speed){
-	
+		this.cx = cx;
+		this.cy = cy;
+		this.width = width;
+		this.height = height;
+		this.color = color;
+		this.id = id;
+		this.v_limit = v_limit;
+		this.speed = speed;
 	}
 
 	/**
