@@ -16,6 +16,8 @@ public class Player {
 		public String id;
 		public double [] v_limit;
 		public double speed;
+		public long delta;
+		public long dist;
 
 	/**
 		Construtor da classe Player.
@@ -47,8 +49,9 @@ public class Player {
 
 	public void draw(){
 
-		GameLib.setColor(Color.GREEN);
-		GameLib.fillRect(80, 300, 20, 100);
+		GameLib.setColor(this.color);
+		GameLib.fillRect(this.cx, this.cy,this.width, this.height);
+		
 	}
 
 	/**
@@ -60,6 +63,7 @@ public class Player {
 	*/
 
 	public void moveUp(long delta){
+
 
 	}
 
@@ -73,16 +77,19 @@ public class Player {
 
 	public void moveDown(long delta){
 
+
+
 	}
 
 	/**
 		Método que devolve a string de identificação do player.
-		@return a String de indentificação.
+		@return a String de identificação.
 	*/
 
 	public String getId() { 
+	
+		return this.id;
 
-		return ""; 
 	}
 
 	/**

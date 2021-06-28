@@ -8,6 +8,9 @@ import java.awt.*;
 
 public class Score {
 
+	public int score = 0;
+	public String playerId;
+
 	/**
 		Construtor da classe Score.
 
@@ -15,6 +18,8 @@ public class Score {
 	*/
 
 	public Score(String playerId){
+
+		this.playerId = playerId;
 
 	}
 
@@ -24,14 +29,18 @@ public class Score {
 
 	public void draw(){
 
-		GameLib.drawText("placar?", 70, GameLib.ALIGN_LEFT);			
+		GameLib.drawText("Player 1: " + this.score , 70, GameLib.ALIGN_LEFT);	
+		GameLib.drawText("Player 2: " + this.score , 70, GameLib.ALIGN_RIGHT);
+
 	}
 
 	/**
 		Método que incrementa em 1 unidade a contagem de pontos.
 	*/
 
-	public void inc(){
+	public void inc(){ 
+
+		this.score = score++;
 
 	}
 
@@ -43,6 +52,9 @@ public class Score {
 
 	public int getScore(){
 
-		return 0;
+		 
+
+		return this.score;
+		
 	}
 }

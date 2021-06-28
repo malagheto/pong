@@ -1,6 +1,5 @@
 import java.awt.*;
-
-import jdk.tools.jlink.internal.DirArchive;
+// import jdk.tools.jlink.internal.DirArchive;
 
 /**
 	Esta classe representa a bola usada no jogo. A classe princial do jogo (Pong)
@@ -17,6 +16,9 @@ public class Ball {
 		public double speed;  
 		public String playerId;
 		public long delta;
+		public double dist;
+		public String walString;
+		public Wall wall;
 
 	/**
 		Construtor da classe Ball. Observe que quem invoca o construtor desta classe define a velocidade da bola 
@@ -32,12 +34,14 @@ public class Ball {
 	*/
 
 	public Ball(double cx, double cy, double width, double height, Color color, double speed){
+
 		this.cx = cx;
 		this.cy = cy;
 		this.width = width;
 		this.height =  height;
 		this.color = color;
-		this.speed = speed;   
+		this.speed = speed;
+
 	}
 
 
@@ -47,8 +51,9 @@ public class Ball {
 
 	public void draw(){
 
-		GameLib.setColor(Color.YELLOW);
-		GameLib.fillRect(400, 300, 20, 20);
+		GameLib.setColor(this.color);
+		GameLib.fillRect(this.cx, this.cy, this.width, this.height);
+
 	}
 
 	/**
@@ -58,7 +63,9 @@ public class Ball {
 	*/
 
 	public void update(long delta){
+
 		this.delta = delta;
+
 	}
 
 	/**
@@ -68,8 +75,9 @@ public class Ball {
 	*/
 
 	public void onPlayerCollision(String playerId){
-		this.playerId = playerId;
 
+		this.playerId = playerId;
+		
 	}
 
 	/**
